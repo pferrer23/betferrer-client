@@ -1,5 +1,6 @@
 {
   "name": "betferrer-client",
   "dependencies": {
+    "sweetalert2": "^6.1.0"
   }
 }

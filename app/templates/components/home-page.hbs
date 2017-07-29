@@ -1,5 +1,38 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Bet Colombia</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Inicio</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{log  session.isAuthenticated}}
+        {{log session.currentUser}}
+        {{#if session.isAuthenticated}}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{session.currentUser.Email}} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a onClick={{action "logout"}}>Cerrar Sesion</a></li>
+            </ul>
+          </li> 
+        {{else}}
+          <li><a href="#">Registro</a></li>
+        {{/if}}
+      
+      </ul>
+    </div>
+  </div>
+</nav>
 {{#if session.isAuthenticated}}	
-
+  {{yield}}
 {{else}}
   {{login-form}}
 {{/if}}

@@ -1,0 +1,77 @@
+<div class="layout-row">
+  <div class="layout-row layout-align-center-center layout-wrap flex-100">
+    <div class="page-container">
+      <div class="layout-row layout-align-start-center layout-wrap tournament-details">
+        <div class="layout-row layout-align-start-center flex-20 flex-xs-100">
+          <div class="torunament-logo"><img src={{tournament.tournamentLogo}} alt=""></div>
+        </div>
+        <div class="layout-row layout-align-start-center flex-70 flex-xs-100">
+          <h2>{{tournament.tournamentName}}</h2>
+        </div>
+        <div class="layout-row layout-align-end-center flex-10">
+          <button class="btn btn-default login-buttons" onClick={{route-action "transitionToHome"}}>{{fa-icon "arrow-left" size=""}} Volver</button>
+        </div>
+        <div class="layout-row layout-align-center-center layout-wrap  flex-100 tournament-progress-wrap">
+          <div class="flex-100 progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar"
+            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{progressValue}}">
+              {{progressValue}}
+            </div>
+          </div>
+          <div class="layout-row layout-align-start-center flex-50 tournament-dates">
+            {{moment-format tournament.startDate 'DD MMM'  }}
+          </div>
+          <div class="layout-row layout-align-end-center flex-50 tournament-dates">
+            {{moment-format tournament.endDate 'DD MMM'}}
+          </div>
+        </div>
+        {{#each groupFases as |groupFase|}}
+          <div class="layout-row layout-align-center-center layout-wrap  flex-100 fases-wrap">
+            <div class="layout-row layout-align-center-center flex-100 fase-title">
+              <div>
+                {{groupFase.faseName}}
+              </div>
+            </div>
+            {{#each groupFase.faseGroups as |group|}}
+              <div class="flex-100 fase-title">
+                {{group.groupName}}
+              </div>
+              <div class="layout-row layout-align-center-center flex-100">
+                <table style="width:100%">
+                  <tr>
+                    <th>Equipo</th>
+                    <th>P</th>
+                    <th>W</th>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>Pts.</th>
+                  </tr>
+                  {{#each group.goupTeams as |team|}}
+                      <tr>
+                        <td>{{team.teamName}}</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                  {{/each}}
+                </table>
+              </div>
+            {{/each}}
+          </div>
+        {{/each}}
+         {{#each qualificationFases as |qualificationFase|}}
+          <div class="layout-row layout-align-center-center layout-wrap  flex-100 fases-wrap">
+            <div class="layout-row layout-align-center-center flex-100 fase-title">
+              <div>
+                {{qualificationFase.faseName}}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+{{log fasesCharged}}

@@ -1,0 +1,39 @@
+ <div class="layout-row layout-align-center-center layout-wrap tournaments-container">
+    <div class="layout-row layout-align-center-center flex-100 cont-header">
+      <div>{{fa-icon "trophy" size=""}}</div>
+      <div>Torneos Activos:</div> 
+    </div>
+    <div class="layout-row layout-align-center-center layout-wrap flex-100 tournaments-grid">
+      {{#each tournaments as |tournament|}}
+        <div class="layout-column layout-align-center-center flex-20 flex-md-33 flex-sm-50 flex-xs-100 tournament-cell">
+            <div class="layout-column layout-align-center-center tournament-card" onClick={{route-action "transitionToTrounamentDetail" tournament}}>
+              <div class="tournament-name">{{tournament.tournamentName}} </div>
+              <div class="torunament-logo"><img src={{tournament.tournamentLogo}} alt=""></div>
+              <div class="tournament-description">{{tournament.tournamentDescription}} </div>
+            </div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="layout-row layout-align-center-center flex-100 cont-header">
+      <div>{{fa-icon "user" size=""}}</div> 
+      <div>Mis Torneos:</div> 
+    </div>
+    <div class="layout-row layout-align-center-center layout-wrap flex-100 tournaments-grid">
+      {{#each userTournaments as |userTournament|}}
+        <div class="layout-column layout-align-center-center flex-20 flex-md-33 flex-sm-50 flex-xs-100 tournament-cell">
+          <div class="layout-column layout-align-center-center tournament-card">
+            <div class="tournament-name">{{userTournament.personalizedName}} </div>
+            <div class="torunament-logo"><img src={{userTournament.tournament.tournamentLogo}} alt=""></div>
+            <div class="tournament-description">{{userTournament.tournament.tournamentDescription}} </div>
+            <div class="subscription-status">
+              {{#if userTournament.active}}
+                <span class="active-tour">Activo</span>
+              {{else}}
+                <span class="pendding-tour">Pendiente</span>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>

@@ -5,6 +5,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     const tournamentId = this.paramsFor('tournament-detail').tournament_id;
     return Ember.RSVP.hash({
       tournament: this.store.findRecord('tournament', tournamentId),
+      events: this.store.query('event', {tournamentId: tournamentId}),
     });
   },
   actions: {

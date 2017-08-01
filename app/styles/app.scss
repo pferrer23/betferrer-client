@@ -156,6 +156,7 @@ body {
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 600;
+  padding-bottom: 5px;
 }
 .fase-title:after, .fase-title:before, {
     content: "";
@@ -164,4 +165,20 @@ body {
     height: 1px;
     top: 0px;
     background-color: rgba(0,12,36,.2);
+}
+.team-flag{
+  padding-right: 5px;
+}
+.group-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+.points-column-small {
+  width: 45px;
+}
+.points-column {
+  width: 60px;
+}
+.points-column-big {
+  width: 85px;
 }

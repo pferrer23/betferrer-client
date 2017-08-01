@@ -46,6 +46,7 @@
     "ember-source": "~2.12.0",
     "ember-sweetalert": "^0.1.1",
     "ember-welcome-page": "^2.0.2",
+    "ember-world-flags": "^0.2.6",
     "loader.js": "^4.2.3"
   },
   "engines": {

@@ -88,26 +88,30 @@ export default function() {
             id: 1,
             faseId: 1,
             groupName: "Grupo A",
-            goupTeams: [
+            groupTeams: [
               {
                 id: 1,
                 groupId: 1,
-                teamName: "Brasil"
+                teamName: "Brasil",
+                abreviation: "br"
               },
               {
                 id: 2,
                 groupId: 1,
-                teamName: "Argentina"
+                teamName: "Argentina",
+                abreviation: "ar"
               },
               {
                 id: 3,
                 groupId: 1,
-                teamName: "Colombia"
+                teamName: "Colombia",
+                abreviation: "co"
               },
               {
                 id: 4,
                 groupId: 1,
-                teamName: "Chile"
+                teamName: "Chile",
+                abreviation: "cl"
               }
             ]
           },
@@ -115,26 +119,30 @@ export default function() {
             id: 2,
             faseId: 1,
             groupName: "Grupo B",
-            goupTeams: [
+            groupTeams:  [
               {
                 id: 1,
                 groupId: 1,
-                teamName: "Brasil"
+                teamName: "Brasil",
+                abreviation: "br"
               },
               {
                 id: 2,
                 groupId: 1,
-                teamName: "Argentina"
+                teamName: "Argentina",
+                abreviation: "ar"
               },
               {
                 id: 3,
                 groupId: 1,
-                teamName: "Colombia"
+                teamName: "Colombia",
+                abreviation: "co"
               },
               {
                 id: 4,
                 groupId: 1,
-                teamName: "Chile"
+                teamName: "Chile",
+                abreviation: "cl"
               }
             ]
           },
@@ -142,26 +150,30 @@ export default function() {
             id: 3,
             faseId: 1,
             groupName: "Grupo C",
-            goupTeams: [
+            groupTeams:  [
               {
                 id: 1,
                 groupId: 1,
-                teamName: "Brasil"
+                teamName: "Brasil",
+                abreviation: "br"
               },
               {
                 id: 2,
                 groupId: 1,
-                teamName: "Argentina"
+                teamName: "Argentina",
+                abreviation: "ar"
               },
               {
                 id: 3,
                 groupId: 1,
-                teamName: "Colombia"
+                teamName: "Colombia",
+                abreviation: "co"
               },
               {
                 id: 4,
                 groupId: 1,
-                teamName: "Chile"
+                teamName: "Chile",
+                abreviation: "cl"
               }
             ]
           }
@@ -253,5 +265,123 @@ export default function() {
         }
       },
     ];    
+  });
+
+  this.get('api/events', () =>{
+    return [
+      {
+        id: 1,
+        tournamentId: 1,
+        faseId: 1,
+        groupId: 1,
+        teamOneId: 1,
+        teamOne: {
+          id: 1,
+          groupId: 1,
+          teamName: "Brasil",
+          abreviation: "br"
+        },
+        teamOneScore: 1,
+        teamTwoId: 2,
+        teamTwo: {
+            id: 2,
+            groupId: 1,
+            teamName: "Argentina",
+            abreviation: "ar"   
+        },
+        teamTwoScore: 1,
+        eventStartDate: "06-06-2018",
+      },
+      {
+        id: 2,
+        tournamentId: 1,
+        faseId: 1,
+        groupId: 1,
+        teamOneId: 0,
+        teamOne: {
+                id: 3,
+                groupId: 1,
+                teamName: "Colombia",
+                abreviation: "co"
+              },
+        teamOneScore: 3,
+        teamTwoId: 4,
+        teamTwo: {
+                id: 4,
+                groupId: 1,
+                teamName: "Chile",
+                abreviation: "cl"
+              },
+        teamTwoScore: 1,
+        eventStartDate: "06-06-2018",
+      },
+      {
+        id: 3,
+        tournamentId: 1,
+        faseId: 1,
+        groupId: 1,
+        teamOneId: 1,
+        teamOne: {
+          id: 1,
+          groupId: 1,
+          teamName: "Brasil",
+          abreviation: "br"
+        },
+        teamOneScore: 1,
+        teamTwoId: 3,
+        teamTwo: {
+          id: 3,
+          groupId: 1,
+          teamName: "Colombia",
+          abreviation: "co"
+        },
+        teamTwoScore: 10,
+        eventStartDate: "06-06-2018",
+      },{
+        id: 4,
+        tournamentId: 1,
+        faseId: 1,
+        groupId: 1,
+        teamOneId: 2,
+        teamOne:{
+            id: 2,
+            groupId: 1,
+            teamName: "Argentina",
+            abreviation: "ar"   
+        },
+        teamOneScore: 1,
+        teamTwoId: 4,
+        teamTwo: {
+                id: 4,
+                groupId: 1,
+                teamName: "Chile",
+                abreviation: "cl"
+              },
+        teamTwoScore: 5,
+        eventStartDate: "06-06-2018",
+      },{
+        id: 5,
+        tournamentId: 1,
+        faseId: 1,
+        groupId: 1,
+        teamOneId: 1,
+        teamOne: {
+          id: 1,
+          groupId: 1,
+          teamName: "Brasil",
+          abreviation: "br"
+        },
+        teamOneScore: 0,
+        teamTwoId: 4,
+        teamTwo: {
+                id: 4,
+                groupId: 1,
+                teamName: "Chile",
+                abreviation: "cl"
+              },
+        teamTwoScore: 4,
+        eventStartDate: "06-06-2018",
+      }
+    ];
   });
 }

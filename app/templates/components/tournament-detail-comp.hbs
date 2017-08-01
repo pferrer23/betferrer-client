@@ -33,30 +33,22 @@
               </div>
             </div>
             {{#each groupFase.faseGroups as |group|}}
-              <div class="flex-100 fase-title">
+              <div class="flex-100 group-title">
                 {{group.groupName}}
               </div>
               <div class="layout-row layout-align-center-center flex-100">
-                <table style="width:100%">
-                  <tr>
-                    <th>Equipo</th>
-                    <th>P</th>
-                    <th>W</th>
-                    <th>D</th>
-                    <th>L</th>
-                    <th>Pts.</th>
-                  </tr>
-                  {{#each group.goupTeams as |team|}}
-                      <tr>
-                        <td>{{team.teamName}}</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                      </tr>
-                  {{/each}}
-                </table>
+                {{models-table
+                  class="flex-100"
+                  data=group.groupTeams
+                  columns=groupColumns
+                  showColumnsDropdown=false
+                  filteringIgnoreCase=false
+                  useFilteringByColumns=false
+                  customMessages=customMessages
+                  customClasses=customClasses
+                  showComponentFooter=false
+                  showGlobalFilter=false
+                }} 
               </div>
             {{/each}}
           </div>
@@ -75,3 +67,35 @@
   </div>
 </div>
 {{log fasesCharged}}
+
+
+<div class="layout-row layout-align-center-center flex-100">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>equipo 1</th>
+                      <th>puntaje</th>
+                      <th>equipo 2</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each events as |event|}}
+                        <tr>
+                          <td>
+                            <div class="layout-row layout-align-start-center flex-100">
+                              <div class="team-flag">{{world-flag event.teamOne.abreviation}}</div>
+                              <div>{{event.teamOne.teamName}}</div>
+                            </div>
+                          </td>
+                          <td>{{event.teamOneScore}} - {{event.teamTwoScore}}</td>
+                          <td>
+                            <div class="layout-row layout-align-start-center flex-100">
+                              <div class="team-flag">{{world-flag event.teamTwo.abreviation}}</div>
+                              <div>{{event.teamTwo.teamName}}</div>
+                            </div>
+                          </td>
+                        </tr>
+                    {{/each}}
+                   </tbody>
+                </table>
+              </div>
